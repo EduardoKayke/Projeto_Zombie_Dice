@@ -1,7 +1,41 @@
 Estrutura da dinâmica do jogo
 
-1 - Usuário deve informar a quantidade de jogadores.
-2 - Usuário deve informar o nome dos jogadores.
+. Apresentação do jogo
+    Nome do jogo + Cérebrooooooo. Aaaargh!
+. Mostrar o objetivo do jogo
+    Para vencer coma 13 cérebros
+. Usuário deve informar a quantidade de jogadores
+    Mostrar o número de jogadores
+. Usuário deve informar o nome dos jogadores
+    Mostrar o nome dos jogadores
+
+. Se o jogador comeu 13 cérebros.
+    Mostrar o nome do jogador
+    Mensagem de vitória
+. Fim do jogo
+. Opções para jogar novamente ou sair.
+
+
+jogador: zumbi
+objetivo: comer 13 cerebros para vencer o jogo
+atencao: se jogador levar tres tiros de espingarda ele perde e sdai do jogo
+acao 1: comer cérebros
+acao 2: comer mais cérebros que seus amigos
+componentes: 13 dados de 6 faces
+tipos de dados: verdes, vermelhos, amarelos
+simbolos dos dados: tiro, cérebro, pessoa
+tipos de dados 1: vermelhos são os mais difíceis, possuem um maior de faces com símbolo tiro
+tipos de dados 2: verdes são os mais fáceis, o maior número de faces do dado é do cérebro
+tipos de dados 3: amarelos, são intermediários as faces dos dados possuem a mesma quantidade cérebros, tiros e passos
+rodada: cada jogador tem um turno para jogar. 
+turno: jogador deve pegar aleatoriamente 3 dados do tubo e lançar, sempre os três dados juntos
+turno:o jogador, apos lancar os dados, pode desistir parar ou continuar a jogar
+    se: decidir parar, contabiliza os cerebros para proxima jogada
+    consequencia: dados de tiros sao zerados para proxima roada
+condicao 1: quando a face do dado cair virada com o simbolo para "cérebro", é porque o jogador comeu um cérebro
+condicao 2: quando a face do dado cair virada com o simbolo para "passos" a vitima fugiu
+    se: jogador decidir continuar a lancar os dados em seu turno, os dados que cairam com a face para "passos" deverao ser lancados novamente
+    condicao: lancar novamente os tres dados o jogador completa  a quantidade retirando outros dados do tubo, sempre lançando os tres dados
 
 Regras:
 . 13 dados e um tubo para guardá-los. 
@@ -61,7 +95,7 @@ Regras:
     quantos Cérebros você tinha e coloque esses dados de
     volta no tubo (mantenha as Espingardas na mesa). É só
     continuar...
-    
+
 . Jogue até alguém chegar a 13 Cérebros. Termine a
     rodada (todos devem jogar o mesmo número de
     turnos). Quem tiver devorado mais Cérebros até o final
