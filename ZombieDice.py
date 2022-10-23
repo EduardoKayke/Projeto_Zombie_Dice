@@ -1,7 +1,4 @@
 """
-Criou os  dados utilizando uma string (6 verdes, 4 amarelos e 3 vermelhos) ​
-Implementou a rotina para sortear os dados (selecionar três dados)
-Implementou a rotina para jogar os dados (sortear a face de um dos dados)
 Criou as variáveis para contabilizar os tiros, cérebros e passos​
 Incrementa as variáveis quando um dos dados é lançado​
 Implementou a rotina para sortear os dados dentro da estrutura de repetição​
@@ -49,24 +46,37 @@ for index in range(jogadores):
 
 # Função que sorteia os dados.
 def sortear_dados():
+    # Faces dos dados verde, amarelo e vermelho
     faces_dado_verde = ['C', 'P', 'C', 'T', 'P', 'C']
     faces_dado_amarelo = ['T', 'P', 'C', 'T', 'P', 'C']
     faces_dado_vermelho = ['T', 'P', 'T', 'C', 'P', 'T']
 
+    # Copo com os 13 dados para sorteio
     copo_de_dados = ['verde', 'verde', 'verde', 'verde', 'verde', 'verde', 'amarelo',
                      'amarelo', 'amarelo', 'amarelo', 'vermelho', 'vermelho', 'vermelho']
 
+    #Função que sorteia um dado do copo de dados.
     sorteio = random.choice(copo_de_dados)
 
+    # Função para adicionar mais informações sobre a face.
+    def nome_face(dado):
+        if dado == 'C':
+            return f'Cérebros'
+        elif dado == 'P':
+            return f'Passos'
+        else: 
+            return f'Tiros'
+
+    # Sorteio das faces e retorno
     if sorteio == 'verde':
         verde = random.choice(faces_dado_verde)
-        return verde
+        return f'Dado verde. Face sorteada --> {verde} de {nome_face(verde)}'
     elif sorteio == 'amarelo':
         amarelo = random.choice(faces_dado_amarelo)
-        return amarelo
+        return f'Dado amarelo. Face sorteada --> {amarelo} de {nome_face(amarelo)}'
     else:
         vermelho = random.choice(faces_dado_vermelho)
-        return vermelho
+        return f'Dado vermelho. Face sorteada --> {vermelho} de {nome_face(vermelho)}'
 
 # Variáveis iniciais para os turnos do jogo.
 jogador_atual = 0
