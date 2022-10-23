@@ -1,5 +1,4 @@
 """
-Utilizou as estruturas condicionais (if, else e elif)​
 Criou os  dados utilizando uma string (6 verdes, 4 amarelos e 3 vermelhos) ​
 Implementou a rotina para sortear os dados (selecionar três dados)
 Implementou a rotina para jogar os dados (sortear a face de um dos dados)
@@ -11,14 +10,14 @@ Criou as variáveis para contabilizar os tiros, cérebros e passos adicionando n
 Incrementa as variáveis quando um dos dados são lançados​
 Verifica o resultado dos três dados lançados​
 """
-# Importando o random
+# Importando o random.
 import random
 
-# Variáveis iniciais
+# Variáveis iniciais.
 jogadores = 0
 lista_jogadores = []
 
-# Apresentação do jogo
+# Apresentação do jogo.
 print("----------------------------------------")
 print("--------Bem-Vindo ao Zombie Dice--------")
 print("----------------Aaaargh!----------------")
@@ -26,7 +25,7 @@ print("----------------------------------------")
 print("-----Para vencer coma 13 cérebrooos!----")
 print("----------------------------------------")
 
-# Entrada de dado da quantidade de jogadores
+# Entrada de dado da quantidade de jogadores.
 while jogadores < 2:
     print()
     jogadores = int(input("Quantos jogadores? --> "))
@@ -39,7 +38,7 @@ while jogadores < 2:
         print(f"Cérebrooos, Aaaargh!")
         print()
 
-# Entrada de dado do nome dos jogadores
+# Entrada de dado do nome dos jogadores.
 print(f"Qual é o nome dos Zombies?")
 
 for index in range(jogadores):
@@ -47,12 +46,40 @@ for index in range(jogadores):
 
     lista_jogadores.append(nome)
 
-# variaveis de marcação
-# WHILE onde fica todo o jogo com condição de vitória.
-lista = ['verdes', 'amarelos', 'vermelhos']
-escolha = random.choice(lista)
-print(escolha)
 
+# Função que sorteia os dados.
+def sortear_dados():
+    faces_dado_verde = ['C', 'P', 'C', 'T', 'P', 'C']
+    faces_dado_amarelo = ['T', 'P', 'C', 'T', 'P', 'C']
+    faces_dado_vermelho = ['T', 'P', 'T', 'C', 'P', 'T']
+
+    copo_de_dados = ['verde', 'verde', 'verde', 'verde', 'verde', 'verde', 'amarelo',
+                     'amarelo', 'amarelo', 'amarelo', 'vermelho', 'vermelho', 'vermelho']
+
+    sorteio = random.choice(copo_de_dados)
+
+    if sorteio == 'verde':
+        verde = random.choice(faces_dado_verde)
+        return verde
+    elif sorteio == 'amarelo':
+        amarelo = random.choice(faces_dado_amarelo)
+        return amarelo
+    else:
+        vermelho = random.choice(faces_dado_vermelho)
+        return vermelho
+
+# Variáveis iniciais para os turnos do jogo.
+jogador_atual = 0
+dados_sorteados = []
+tiros = 0
+cerebros = 0
+passos = 0
+
+# Iniciando o jogo
+print("Jogando...")
+
+while True:
+    break
 # A ideia é.. Cada jogador em seu turno sorteia os dados para jogar..
 # Vc não deve sortear para todos os jogadores
 # Cada um na sua vez pega o copo com 3 dados..
