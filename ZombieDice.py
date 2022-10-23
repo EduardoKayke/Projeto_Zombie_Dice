@@ -1,21 +1,24 @@
 """
 Utilizou as estruturas condicionais (if, else e elif)​
-Utilizou os operadores lógicos e aritméticos ​
 Criou os  dados utilizando uma string (6 verdes, 4 amarelos e 3 vermelhos) ​
 Implementou a rotina para sortear os dados (selecionar três dados)
 Implementou a rotina para jogar os dados (sortear a face de um dos dados)
 Criou as variáveis para contabilizar os tiros, cérebros e passos​
 Incrementa as variáveis quando um dos dados é lançado​
-Utilizou as estruturas repetição (for e while)
-Realiza a Interação do jogador utilizando a estrutura de repetição​
 Implementou a rotina para sortear os dados dentro da estrutura de repetição​
 Implementou a rotina para jogar os dados dentro da estrutura de repetição​
 Criou as variáveis para contabilizar os tiros, cérebros e passos adicionando na estrutura de repetição​
 Incrementa as variáveis quando um dos dados são lançados​
 Verifica o resultado dos três dados lançados​
 """
+# Importando o random
 import random
 
+# Variáveis iniciais
+jogadores = 0
+lista_jogadores = []
+
+# Apresentação do jogo
 print("----------------------------------------")
 print("--------Bem-Vindo ao Zombie Dice--------")
 print("----------------Aaaargh!----------------")
@@ -23,8 +26,7 @@ print("----------------------------------------")
 print("-----Para vencer coma 13 cérebrooos!----")
 print("----------------------------------------")
 
-jogadores = 0
-
+# Entrada de dado da quantidade de jogadores
 while jogadores < 2:
     print()
     jogadores = int(input("Quantos jogadores? --> "))
@@ -37,20 +39,25 @@ while jogadores < 2:
         print(f"Cérebrooos, Aaaargh!")
         print()
 
-print("Qual é o nome dos Zombies?")
+# Entrada de dado do nome dos jogadores
+print(f"Qual é o nome dos Zombies?")
 
-nome_jogadores = []
+for index in range(jogadores):
+    nome = input(f"Zombie {str(index + 1)}, qual é o seu nome? --> ")
 
-for nome_jogadores in len(jogadores):
-    nome_jogadores = input(f"Zombie {nome_jogadores}. Qual seu nome?")
-
-#     Mostrar o nome dos jogadores
+    lista_jogadores.append(nome)
 
 # variaveis de marcação
 # WHILE onde fica todo o jogo com condição de vitória.
 lista = ['verdes', 'amarelos', 'vermelhos']
 escolha = random.choice(lista)
 print(escolha)
+
+# A ideia é.. Cada jogador em seu turno sorteia os dados para jogar..
+# Vc não deve sortear para todos os jogadores
+# Cada um na sua vez pega o copo com 3 dados..
+# E sorteia 3 dados para jogar..
+# E desses 3 dados sorteia uma das 6 faces de cada dado
 
 # Assim, você deverá criar os dados neste momento utilizando um objeto do tipo string.
 # Esta string deve conter seis caracteres para simular cada face do dado. Para
