@@ -63,7 +63,7 @@ def sortear_dados():
     # Função que sorteia um dado do copo de dados.
     sorteio = random.choice(copo_de_dados)
 
-    # Função para adicionar mais informações sobre a face.
+    # Função para adicionar mais informações sobre a face e valores na variáveis
     def nome_face(dado):
         if dado == 'C':
             return f'Você comeu um cérebro.'
@@ -89,7 +89,7 @@ def sim_nao_rolar():
     try:
         sim_ou_nao = str(input("Deseja rolar o dado? Sim(s) ou Não(n) --> "))
 
-        if sim_ou_nao != 's' and sim_ou_nao != 'S' and sim_ou_nao != 'n'  and sim_ou_nao != 'N':
+        if sim_ou_nao != 's' and sim_ou_nao != 'S' and sim_ou_nao != 'n' and sim_ou_nao != 'N':
             print()
             print('........................ATENÇÂO........................')
             print('......Digite apenas (s) para Sim ou (n) para Não.......')
@@ -115,11 +115,12 @@ print()
 print("...............O JOGO COMEÇOU...............")
 print()
 print("Os Zombies estão correndo e atacando as pessoas")
-print("Cérebroooooos, Aaaaaaaargh...")
+print("..........Cérebroooooos, Aaaaaaaargh...........")
 print()
 
 while True:
-    print(f'Iniciando o turno com -->   ...  {lista_jogadores[jogador_atual]}  ...')
+    print(
+        f'Iniciando o turno com -->   >>>  {lista_jogadores[jogador_atual]}  <<<')
     print()
     print('Role os dados, boa sorte...')
 
@@ -129,11 +130,22 @@ while True:
         escolha = sim_nao_rolar()
 
         if escolha == 's' or escolha == 'S':
+            resultado = sortear_dados()
+
             print('.........................................................')
-            print(sortear_dados())
+            print(resultado)
             print('.........................................................')
+
+            if resultado == 'cérebro':
+                cerebros + 1
+            elif resultado == 'escapou':
+                cerebros + 1
+            elif resultado == 'tiro':
+                cerebros + 1
+            else:
+                print('Error')
         else:
-            break
+            print(f'Passos: {passos}, Tiros: {tiros}, Cérebros: {cerebros}')
 
 
 # A ideia é.. Cada jogador em seu turno sorteia os dados para jogar..
