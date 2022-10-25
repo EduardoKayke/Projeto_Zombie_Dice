@@ -126,6 +126,7 @@ tiros = 0
 cerebros = 0
 passos = 0
 jogada = 1
+turno = 1
 
 # Iniciando o jogo
 print()
@@ -138,7 +139,7 @@ print()
 while True:
     print()
     print(
-        f'Iniciando o turno com -->   >>>  {lista_jogadores[jogador_atual]}  <<<')
+        f'Iniciando o turno {turno} com -->   >>>  {lista_jogadores[jogador_atual]}  <<<')
     print()
     print('Role os dados, boa sorte...')
 
@@ -176,6 +177,7 @@ while True:
             print()
             print()
 
+            # Adicionando valor a jogada.
             jogada += 1
 
         else:
@@ -190,6 +192,9 @@ while True:
             cerebros = 0
             passos = 0
             jogada = 1
+
+            # Adicionando valor ao turno
+            turno += 1
 
             # Parando o while
             break
