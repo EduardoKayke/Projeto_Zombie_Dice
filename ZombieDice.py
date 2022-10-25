@@ -4,9 +4,10 @@
 ....................Eduardo Kayke Da Silva....................
 """
 
-# Jogo Zombie Dice 
+# Jogo Zombie Dice
 
 # Importando o random.
+from operator import contains
 import random
 
 # Variáveis iniciais.
@@ -62,7 +63,8 @@ def sortear_dados():
     # Função que sorteia um dado do copo de dados.
     sorteio = random.choice(copo_de_dados)
 
-    # Função para adicionar mais informações sobre a face e valores na variáveis
+    # Função para adicionar mais informações sobre a face.
+
     def nome_face(dado):
         if dado == 'C':
             return f'Você comeu um cérebro.'
@@ -102,41 +104,104 @@ def sim_nao_rolar():
             print()
 
 
+# Função para adicionar valores nas variáveis
+def adicionar_valor(valor):
+
+    global tiros, passos, cerebros
+
+    if 'tiro' in valor:
+        tiros += 1
+    elif 'escapou' in valor:
+        passos += 1
+    elif 'cérebro' in valor:
+        cerebros += 1
+    else:
+        print('Erro ao adicionar a variável')
+
+
 # Variáveis iniciais para os turnos do jogo.
 jogador_atual = 0
 dados_sorteados = []
 tiros = 0
 cerebros = 0
 passos = 0
+jogada = 1
 
 # Iniciando o jogo
 print()
-print("...............O JOGO COMEÇOU...............")
+print("................O JOGO COMEÇOU.................")
 print()
 print("Os Zombies estão correndo e atacando as pessoas")
 print("..........Cérebroooooos, Aaaaaaaargh...........")
 print()
 
 while True:
+    print()
     print(
         f'Iniciando o turno com -->   >>>  {lista_jogadores[jogador_atual]}  <<<')
     print()
     print('Role os dados, boa sorte...')
 
-    while True:
+    while jogador_atual < len(lista_jogadores):
         print()
 
         escolha = sim_nao_rolar()
 
         if escolha == 's' or escolha == 'S':
-            resultado = sortear_dados()
+            print()
+            print()
+            print(f'..........................JOGADA {jogada}..........................')
 
-            print('.........................................................')
-            print(resultado)
-            print('.........................................................')
+            # Sortear o primeiro dado e adicionar o valor a variável.
+            rolar1 = sortear_dados()
+            print(rolar1)
+            adicionar_valor(rolar1)
+
+            # Sortear o segundo dado e adicionar o valor a variável.
+            rolar2 = sortear_dados()
+            print(rolar2)
+            adicionar_valor(rolar2)
+
+            # Sortear o terceiro dado e adicionar o valor a variável.
+            rolar3 = sortear_dados()
+            print(rolar3)
+            adicionar_valor(rolar3)
+
+            # Placar
+            print()
+            print('---------------------------PLACAR---------------------------')
+            print(
+                f'-------------Passos: {passos}, Tiros: {tiros}, Cérebros: {cerebros}---------------')
+            print('............................................................')
+            print()
+            print()
+
+            jogada += 1
+
         else:
-            print(f'Passos: {passos}, Tiros: {tiros}, Cérebros: {cerebros}')
 
+            print('............................................................')
+
+            # Mudando o jogador
+            jogador_atual += 1
+            
+            # Resetando as variáveis
+            tiros = 0
+            cerebros = 0
+            passos = 0
+            jogada = 1
+
+            # Parando o while
+            break
+    
+    print()
+    print('..................FIM DE JOGO..................')
+    #if #jogador levou 3 tiros perdeu:
+            
+            #Apresentar jogador perdeu
+    #elif #jogador comeu 13 cérebros ganhou:
+        
+        #Apresentar jogador perdeu
 
 # . Se o jogador comeu 13 cérebros.
 #     Mostrar o nome do jogador
