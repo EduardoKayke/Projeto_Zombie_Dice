@@ -213,7 +213,7 @@ while True:
 # . Fim do jogo
 # . Opções para jogar novamente ou sair.
 
-
+# Semana 5
 # Modificou a estrutura dos dados de string para tupla​
 # Utilizou uma estrutura para armazenar os jogadores​
 # Utilizou uma estrutura para armazenar os dados do jogo (simular o copo)​
