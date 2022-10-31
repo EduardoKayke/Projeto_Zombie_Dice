@@ -7,7 +7,6 @@
 # Jogo Zombie Dice
 
 # Importando o random.
-from operator import contains
 import random
 
 # Variáveis iniciais.
@@ -213,3 +212,13 @@ while True:
 #     Mensagem de vitória
 # . Fim do jogo
 # . Opções para jogar novamente ou sair.
+
+
+# Modificou a estrutura dos dados de string para tupla​
+# Utilizou uma estrutura para armazenar os jogadores​
+# Utilizou uma estrutura para armazenar os dados do jogo (simular o copo)​
+# Remove os dados da lista em cada jogada​
+# Armazena a pontuação dos jogadores na lista (quantidade de cérebros e tiros)​
+# Reinicia a lista que armazena os dados sempre que o turno de um jogador termina (adicionado novamente os 13 dados no copo)​
+# Reinicia a pontuação de tiros na lista sempre que o jogador finalizar seu turno​
+# Imprime na saída do console quais os dados que estão armazenados no copo em cada uma das jogadas ​
