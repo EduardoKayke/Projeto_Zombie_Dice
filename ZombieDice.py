@@ -51,13 +51,13 @@ for index in range(jogadores):
 # Função que sorteia os dados.
 def sortear_dados():
     # Faces dos dados verde, amarelo e vermelho
-    faces_dado_verde = ['C', 'P', 'C', 'T', 'P', 'C']
-    faces_dado_amarelo = ['T', 'P', 'C', 'T', 'P', 'C']
-    faces_dado_vermelho = ['T', 'P', 'T', 'C', 'P', 'T']
+    faces_dado_verde = ('C', 'P', 'C', 'T', 'P', 'C')
+    faces_dado_amarelo = ('T', 'P', 'C', 'T', 'P', 'C')
+    faces_dado_vermelho = ('T', 'P', 'T', 'C', 'P', 'T')
 
     # Copo com os 13 dados para sorteio
-    copo_de_dados = ['verde', 'verde', 'verde', 'verde', 'verde', 'verde', 'amarelo',
-                     'amarelo', 'amarelo', 'amarelo', 'vermelho', 'vermelho', 'vermelho']
+    copo_de_dados = ('verde', 'verde', 'verde', 'verde', 'verde', 'verde', 'amarelo',
+                     'amarelo', 'amarelo', 'amarelo', 'vermelho', 'vermelho', 'vermelho')
 
     # Função que sorteia um dado do copo de dados.
     sorteio = random.choice(copo_de_dados)
@@ -200,21 +200,20 @@ while True:
     
     print()
     print('..................FIM DE JOGO..................')
+
     #if #jogador levou 3 tiros perdeu:
             
             #Apresentar jogador perdeu
     #elif #jogador comeu 13 cérebros ganhou:
         
         #Apresentar jogador perdeu
-
+    
 # . Se o jogador comeu 13 cérebros.
 #     Mostrar o nome do jogador
 #     Mensagem de vitória
 # . Fim do jogo
 # . Opções para jogar novamente ou sair.
 
-# Semana 5
-# Modificou a estrutura dos dados de string para tupla​
 # Utilizou uma estrutura para armazenar os jogadores​
 # Utilizou uma estrutura para armazenar os dados do jogo (simular o copo)​
 # Remove os dados da lista em cada jogada​
