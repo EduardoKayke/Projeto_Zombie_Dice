@@ -221,3 +221,12 @@ while True:
 # Reinicia a lista que armazena os dados sempre que o turno de um jogador termina (adicionado novamente os 13 dados no copo)​
 # Reinicia a pontuação de tiros na lista sempre que o jogador finalizar seu turno​
 # Imprime na saída do console quais os dados que estão armazenados no copo em cada uma das jogadas ​
+
+# Esta utilizando funções para modularizar o código​
+# Criou uma função para pegar cada um dos dados (verde, amarelo e vermelho)​
+# Criou uma função para inicializar os dados no copo​
+# Criou uma função para remove os dados do copo (remover da lista em cada jogada)​
+# Criou uma função para lançar os dados (sortear a face do dado)​
+# Criou uma função para mostrar os dados que estão no copo​
+# Criou uma função para mostrar a cor dos que foram sorteados​
+# Criou uma função para apresentar a pontuação do jogo​
