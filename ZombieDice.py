@@ -111,12 +111,11 @@ while True:
 
     # Placar do jogo com todos os jogadores.
     def placar_final():
-        global lista_jogadores
         player = 1
         jogador = 0
 
-        for jogador in lista_jogadores:
-            print(f'Zombie {player}: >> {jogador} << comeu {lista_jogadores[jogador[3]]} cérebros, levou {lista_jogadores[jogador[2]]} tiros e deixou escapar {lista_jogadores[jogador[1]]} humanos... ')
+        for jogador in copo:
+            print(f'Zombie {player}: >> {jogador} << comeu {copo}')
 
             jogador += 1
             player += 1
@@ -125,20 +124,24 @@ while True:
     # Função para adicionar valores nas variáveis
     def adicionar_valor(valor):
 
-        global tiros, passos, cerebros
+        global tiros, passos, cerebros, copo
 
         if 'tiro' in valor:
             tiros += 1
+            # copo[jogador_atual[2]].append(1)
         elif 'escapou' in valor:
             passos += 1
+            # copo[jogador_atual[1]].append(1)
         elif 'cérebro' in valor:
             cerebros += 1
+            # copo[jogador_atual[3]].append(1)
         else:
             print('Erro ao adicionar a variável')
 
 
     # Variáveis iniciais para os turnos do jogo.
     jogador_atual = 0
+    copo = []
     tiros = 0
     cerebros = 0
     passos = 0
@@ -156,6 +159,8 @@ while True:
     print()
 
     while jogador_atual < len(lista_jogadores):
+
+        copo.append(lista_jogadores[jogador_atual])
 
         print()
         print(
@@ -237,8 +242,7 @@ while True:
                 # Placar
                 print()
                 print('---------------------------PLACAR---------------------------')
-                print(
-                    f'-------------Passos: {passos}, Tiros: {tiros}, Cérebros: {cerebros}---------------')
+                print(f'-------------Passos: {passos}, Tiros: {tiros}, Cérebros: {cerebros}---------------')
                 print('............................................................')
                 print()
                 print()
