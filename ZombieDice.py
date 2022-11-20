@@ -108,12 +108,13 @@ while True:
 
     # Placar do jogo com todos os jogadores.
     def placar_final():
-        global lista_jogadores, copo
+        global lista_jogadores
         player = 1
-
+        jogador = 0
         for jogador in lista_jogadores:
-            print(f'Zombie {player}: >> {jogador} << comeu {copo[cerebros]} cérebros, levou {copo[tiros]} tiros e deixou escapar {copo[passos]} humanos... ')
+            print(f'Zombie {player}: >> {jogador} << comeu {lista_jogadores[jogador[3]]} cérebros, levou {lista_jogadores[jogador[2]]} tiros e deixou escapar {lista_jogadores[jogador[1]]} humanos... ')
 
+            jogador += 1
             player += 1
 
     # Função para adicionar valores nas variáveis
@@ -148,6 +149,7 @@ while True:
     print()
 
     while jogador_atual < len(lista_jogadores):
+
         print()
         print(
             f'Iniciando o turno {turno} com -->   >>>  {lista_jogadores[jogador_atual]}  <<<')
@@ -155,6 +157,43 @@ while True:
         print('Role os dados, boa sorte...')
 
         while True:
+
+            # Conferir se está morto ou vitorioso.
+            if tiros == 3:
+                print()
+                print(f' Você levou {tiros} tiros e >> PERDEU <<')
+                print()
+                
+                print('............................................................')
+
+                # Mudando o jogador
+                jogador_atual += 1
+                
+                # Resetando as variáveis
+                tiros = 0
+                cerebros = 0
+                passos = 0
+
+                # Zerando valor da rodada
+                jogada = 0
+                break
+
+            elif cerebros == 13:
+                print()
+                print(f' Você comeu {cerebros} cerebros >> GANHOU <<')
+                print()
+                # Mudando o jogador
+                jogador_atual += 1
+                
+                # Resetando as variáveis
+                tiros = 0
+                cerebros = 0
+                passos = 0
+
+                # Zerando valor da rodada
+                jogada = 0
+                break
+
             print()
 
             escolha = sim_nao_rolar()
@@ -188,19 +227,8 @@ while True:
                 print()
                 print()
 
-                # Adicionando valor a jogada.
+                # Adicionando valor a jogada e variáveis.
                 jogada += 1
-
-                if tiros == 3:
-                    print()
-                    print(f' Você levou {tiros} tiros e >> PERDEU <<')
-                    print()
-                    break
-                elif cerebros == 13:
-                    print()
-                    print(f' Você comeu {cerebros} cerebros >> GANHOU <<')
-                    print()
-                    break  
             
             else:
 
