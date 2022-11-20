@@ -16,6 +16,8 @@ lista_jogadores = []
 #Chamando função que inicia o jogo.
 while True:
     # Apresentação do jogo.
+    print()
+    print()
     print("----------------------------------------")
     print("--------Bem-Vindo ao Zombie Dice--------")
     print("----------------Aaaargh!----------------")
@@ -106,16 +108,19 @@ while True:
                 print("Não é aceito números, digite apenas letras, (s) ou (n).")
                 print()
 
+
     # Placar do jogo com todos os jogadores.
     def placar_final():
         global lista_jogadores
         player = 1
         jogador = 0
+
         for jogador in lista_jogadores:
             print(f'Zombie {player}: >> {jogador} << comeu {lista_jogadores[jogador[3]]} cérebros, levou {lista_jogadores[jogador[2]]} tiros e deixou escapar {lista_jogadores[jogador[1]]} humanos... ')
 
             jogador += 1
             player += 1
+
 
     # Função para adicionar valores nas variáveis
     def adicionar_valor(valor):
@@ -142,9 +147,11 @@ while True:
 
     # Iniciando o jogo
     print()
+    print()
     print("................O JOGO COMEÇOU.................")
     print()
     print("Os Zombies estão correndo e atacando as pessoas")
+    print()
     print("..........Cérebroooooos, Aaaaaaaargh...........")
     print()
 
@@ -163,7 +170,7 @@ while True:
                 print()
                 print(f' Você levou {tiros} tiros e >> PERDEU <<')
                 print()
-                
+                print()
                 print('............................................................')
 
                 # Mudando o jogador
@@ -174,13 +181,18 @@ while True:
                 cerebros = 0
                 passos = 0
 
-                # Zerando valor da rodada
-                jogada = 0
+                # Voltando pra 1 o número da rodada.
+                jogada = 1
+
+                # Adicionando valor ao turno
+                turno += 1
+                
                 break
 
             elif cerebros == 13:
                 print()
                 print(f' Você comeu {cerebros} cerebros >> GANHOU <<')
+                print()
                 print()
                 # Mudando o jogador
                 jogador_atual += 1
@@ -190,8 +202,12 @@ while True:
                 cerebros = 0
                 passos = 0
 
-                # Zerando valor da rodada
-                jogada = 0
+                # Voltando pra 1 o número da rodada.
+                jogada = 1
+
+                # Adicionando valor ao turno
+                turno += 1
+
                 break
 
             print()
