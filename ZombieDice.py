@@ -253,9 +253,7 @@ while True:
 
     # Encerrando o jogo!
     print()
-    print()
     print('..................FIM DE JOGO..................')
-    print()
     print()
 
     # Função de pergunta Sim ou Não para jogar novamente.
