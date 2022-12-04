@@ -23,4 +23,6 @@ Disciplina envolvida - Raciocínio Computacional._
 __OBS: Talvez você tenha que adicionar o caminho do Python no path do sistema, para que o Python seja reconhecido pelo sistema operacional.__
 
 ## Imagens do Projeto
-![Jogo]()
+![Apresentação](img/readme1.png)
+![Jogadores](img/readme2.png)
+![Jogando](img/readme3.png)
